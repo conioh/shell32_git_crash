@@ -1,4 +1,5 @@
 #include <filesystem>
+#include <iostream>
 
 
 #include <Windows.h>
@@ -37,7 +38,13 @@ void invoke_verb(const std::filesystem::path& shortcut_path) {
 }
 
 
-int main() {
+int main(int argc, char* argv[]) {
+    // Extra CoInitializeEx prevents crash
+    if ((argc > 1) && (argv[1][0] == 'x')) {
+        std::cout << "Calling extra CoInitializeEx to prevent crash..." << std::endl;
+        auto hr = CoInitializeEx(nullptr, COINIT_APARTMENTTHREADED);
+    }
+
     std::wstring target_path = LR"(C:\Windows\notepad.exe)";
     invoke_verb(target_path);
     
