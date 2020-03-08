@@ -50,5 +50,7 @@ int main(int argc, char* argv[]) {
     
     Sleep(60000);
 
+    std::cout << "I Didn't crash!" << std::endl;
+
     return 0;
 }
