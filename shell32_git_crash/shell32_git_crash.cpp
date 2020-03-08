@@ -45,7 +45,7 @@ int main(int argc, char* argv[]) {
         auto hr = CoInitializeEx(nullptr, COINIT_APARTMENTTHREADED);
     }
 
-    std::wstring target_path = LR"(C:\Windows\notepad.exe)";
+    std::wstring target_path = LR"(C:\Windows\system32\ping.exe)";
     invoke_verb(target_path);
     
     Sleep(60000);
