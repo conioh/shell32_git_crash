@@ -1,0 +1,2 @@
+shell32_git_crash01.out filter=lfs diff=lfs merge=lfs -text
+shell32_git_crash01.run filter=lfs diff=lfs merge=lfs -text
